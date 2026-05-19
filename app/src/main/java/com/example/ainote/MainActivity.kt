@@ -90,7 +90,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val allNotes = noteDao.getAllNotes()
 
     private val generativeModel = GenerativeModel(
-        modelName = "gemini-1.5-flash",
+        modelName = "gemini-2.0-flash",
         apiKey = "AIzaSyD84LGIuMf1zh2MIjp4sWbl_aOdqrv-TGY"
     )
 
