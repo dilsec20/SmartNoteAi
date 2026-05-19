@@ -62,7 +62,7 @@ interface NoteDao {
     suspend fun deleteNote(note: Note)
 }
 
-@Database(entities = [Note::class], version = 1, exportSchema = false)
+@Database(entities = [Note::class], version = 2, exportSchema = false)
 abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 
