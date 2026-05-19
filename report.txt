@@ -1,0 +1,100 @@
+CA2 Guidelines
+Instructions for Assignment Submission
+1. This assignment is a compulsory CA component.
+2. The assignment (project) is a group activity, but submission on UMS will be individual for
+each student.
+3. The project submission mode is Online only. The student has to upload the report on or
+before the last date on UMS only. No submission via e-mail or pen-drive, or any media will
+be accepted.
+4. Non-submission of project report on UMS till the last date will result in ZERO marks.
+5. The student is supposed to code the project on his/her own. If it is discovered at any stage
+that the student has used unfair means, such as copying from peers or copying and pasting
+code directly taken from the internet, etc. ZERO marks will be awarded to the student.
+6. The student who shares his assignment with other students (either in the same section or a
+different section) will also get ZERO marks.
+Phase 1: Problem Assignment
+Guidelines For Students:
+Step 1: AI-Guided Development
+AI Guidance:
+• Students will submit the problem statement to the AI system.
+• AI will analyze the problem and provide a detailed explanation of the project
+statement along with its breakdown.
+The prompt that will be asked by a student to AI:
+I have been assigned the following problem statement:
+"Paste your Problem Statement Here."
+Provide the following details to help me implement this project:
+1. Project Overview: Explain the project's goals, expected outcomes, and scope.
+2. Module-Wise Breakdown: Divide the project into 3 separate modules (e.g., GUI, ML,
+data visualization), explaining their purposes and roles.
+3. Functionalities: List key features for each module, with examples for clarity.
+4. Technology Recommendations: Suggest programming languages, libraries, and tools
+to use.
+5. Execution Plan: Provide a step-by-step implementation guide with tips for efficiency.
+Implementation Language: Any as per your project requirement
+Step 2: Revision Tracking on GitHub
+GitHub Workflow:
+Students will: ▪ Create a repository for the project.
+Maintain at least 7 revisions and push changes regularly with clear commit messages.
+Use branches for feature implementation and merge them into the main branch after testing.
+Step 3: Report Format
+1. Project Overview
+2. Module-Wise Breakdown
+3. Functionalities
+4. Technology Used
+• Programming Languages:
+• Libraries and Tools:
+• Other Tools: [e.g., GitHub for version control]
+5. Flow Diagram
+6. Revision Tracking on GitHub
+• Repository Name: [Insert Repository Name]
+• GitHub Link: [Insert Link]
+7. Conclusion and Future Scope
+8. References
+Appendix
+A. AI-Generated Project Elaboration/Breakdown Report
+[Paste the AI-generated breakdown of the project in detail]
+B. Problem Statement: [Paste Problem Statement]
+C. Solution/Code:
+[Paste complete code of entire project here]
+Phase 2: Project Evaluation (30 Marks)
+Overall Marks Distribution
+Component Marks
+AI-Based Project Evaluation 15
+Presentation & Viva Voce 10
+Project Dissemination (YouTube & LinkedIn) 5+5
+Bonus: Project Dissemination on LinkedIn &YouTube
+Total 30 Marks
+Step 1: AI-Based Project Evaluation (15 Marks)
+Evaluation Aspect Description Marks
+Technical Quality Correctness, completeness, implementation quality
+Originality Innovation and uniqueness of approach
+Documentation Clarity and structure of submission 15
+(Evaluated using AI-based assessment mechanism by faculty)
+Step 2: Presentation and Viva Voce (10 Marks)
+Criteria Performance Level Marks
+Understanding of Project & Q/A Excellent / Good / Needs Improvement 7
+Problem-Solving Approach Innovation and logical reasoning 3
+Total 10
+Step 3: Project Dissemination & Professional Outreach 5 Marks
+Student Responsibilities for demonstration and uploading on Youtube & Linkedin
+Aspect Guidelines
+Face Visibility Student(s) must be clearly visible on camera while presenting the
+project
+Introduction Begin with student name(s), roll number(s), and project title
+Project Overview Clearly explain the problem statement and objectives
+Demonstration Show live working/demo of the project
+Explanation Briefly explain methodology, tools, and technologies used
+Results Highlight outputs, performance, or observations
+Audio & Video
+Quality Clear voice, stable video, readable screen content
+Duration Recommended 5–8 minutes
+Professionalism Formal language
+Teacher Responsibilities
+Task Description
+Google Form Preparation Collect project title, student details, YouTube & LinkedIn links
+Verification Check authenticity, quality, and tagging compliance
+Evaluation Criteria
+Category 5 Marks
+YouTube Project Demonstration (Mandatory)
+LinkedIn Professional Outreach (Bonus)
+Bonus marks are awarded only if LinkedIn post includes proper tagging and hashtags.

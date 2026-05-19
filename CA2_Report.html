@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CA2 Project Report</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 {
+    color: #000000;
+  }
+  h1 {
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+  }
+  h2 {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #F0F0F0;
+  }
+  pre {
+    background-color: #F8F8F8;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 12px;
+  }
+  code {
+    font-family: Consolas, monospace;
+  }
+  .center {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>CA2 Project Report: SmartNotes AI</h1>
+<p class="center">Student Name: Dilip</p>
+
+<h2>1. Project Overview</h2>
+<p>
+SmartNotes AI is an AI-powered Android application designed to assist students in creating, organizing, and revising study notes. The project leverages Google's Gemini AI to automatically generate intelligent summaries and multiple-choice questions (MCQs) from user notes. Additionally, it features an OCR-based document scanner that extracts text from PDFs and images using Google ML Kit. To maintain a clean, highly accessible, and presentation-ready codebase, the entire application has been condensed into a single file architecture (MainActivity.kt).
+</p>
+
+<h2>2. Module-Wise Breakdown</h2>
+<p>The project is logically divided into three interconnected modules within the single-file architecture:</p>
+<ul>
+  <li><strong>GUI (Graphical User Interface) Module:</strong> Utilizes Jetpack Compose to display the UI. It features a straightforward navigation state to switch between the Notes List, Add Note form, Document Scanner, and Note Detail screens.</li>
+  <li><strong>Data Persistence Module:</strong> Implements Room Database locally on the device to handle CRUD (Create, Read, Update, Delete) operations for study notes.</li>
+  <li><strong>ML & AI Engine Module:</strong> Integrates Google ML Kit for on-device text extraction from images and PDFs, and the Google Generative AI SDK (Gemini) to process text and return summaries and MCQs.</li>
+</ul>
+
+<h2>3. Functionalities</h2>
+<ul>
+  <li><strong>Notes Management:</strong> Users can create, view, and delete text-based study notes.</li>
+  <li><strong>Document Scanner:</strong> Users can upload an image or a PDF. The app extracts text locally using ML Kit OCR.</li>
+  <li><strong>AI Summary Generation:</strong> Users can click a button to send their note content or scanned text to Gemini AI, which returns a concise summary.</li>
+  <li><strong>AI MCQ Generation:</strong> Users can automatically generate 5-question multiple-choice quizzes based on the text for self-assessment.</li>
+</ul>
+
+<h2>4. Technology Used</h2>
+<ul>
+  <li><strong>Programming Languages:</strong> Kotlin</li>
+  <li><strong>Libraries and Tools:</strong>
+    <ul>
+      <li>Jetpack Compose (Declarative UI Toolkit)</li>
+      <li>Room Database (Local SQLite Abstraction)</li>
+      <li>Google Generative AI SDK (Gemini API for text generation)</li>
+      <li>Google ML Kit Text Recognition (On-device OCR)</li>
+      <li>Kotlin Coroutines & Flow (Asynchronous background tasks)</li>
+    </ul>
+  </li>
+  <li><strong>Other Tools:</strong> Android Studio, GitHub (for version control)</li>
+</ul>
+
+<h2>5. Flow Diagram</h2>
+<pre>
+[User Starts App]
+       |
+       v
+[Notes List Screen] ---> (Click Add) ---> [Add Note Screen] ---> (Save) ---> [Room DB]
+       |
+       +---> (Click Scan) ---> [Scanner Screen]
+                                   |
+                                   v
+                         [Upload PDF / Image]
+                                   |
+                                   v
+                        [ML Kit Text Extraction]
+                                   |
+                                   v
+             [Click "Generate Summary" or "Generate MCQs"]
+                                   |
+                                   v
+                          [Gemini AI API Call]
+                                   |
+                                   v
+                          [Display AI Results] ---> (Save as Note) ---> [Room DB]
+</pre>
+
+<h2>6. Revision Tracking on GitHub</h2>
+<ul>
+  <li><strong>Repository Name:</strong> AiNote</li>
+  <li><strong>GitHub Link:</strong> [Insert Link Here]</li>
+</ul>
+
+<h2>7. Conclusion and Future Scope</h2>
+<p><strong>Conclusion:</strong> SmartNotes AI successfully demonstrates the integration of modern Android development practices (Kotlin, Jetpack Compose) with advanced capabilities like on-device machine learning (ML Kit) and cloud-based generative AI (Gemini). Condensing the application into a single-file architecture emphasizes code readability and straightforward data flow.</p>
+<p><strong>Future Scope:</strong> Future iterations could include voice-to-text dictation, multi-language OCR support, exporting notes to PDF, and cross-device cloud synchronization using Firebase.</p>
+
+<h2>8. References</h2>
+<ul>
+  <li>Android Developers Documentation: developer.android.com</li>
+  <li>Jetpack Compose Guide: developer.android.com/jetpack/compose</li>
+  <li>Google AI for Developers: ai.google.dev</li>
+  <li>Google ML Kit: developers.google.com/ml-kit</li>
+</ul>
+
+<hr>
+
+<h2>Appendix</h2>
+
+<h3>A. AI-Generated Project Elaboration/Breakdown Report</h3>
+<p>
+<strong>AI Guidance:</strong> The AI analyzed the initial requirement and suggested breaking the application into distinct logical layers. To prioritize simplicity and ease of presentation for the CA2 assignment, the AI guided the consolidation of the Model (Room Database), ViewModel (MainViewModel for API and ML Kit tasks), and View (Compose UI) into a single <code>MainActivity.kt</code> file. The AI recommended using Jetpack Compose for the UI to reduce XML boilerplate and suggested ML Kit for offline OCR processing before sending text to the Gemini API.
+</p>
+
+<h3>B. Problem Statement</h3>
+<p>
+"Design and implement an Android mobile application that leverages Artificial Intelligence to enhance the study experience for students. The application should allow users to create and manage study notes, generate AI-powered summaries and assessments, and scan physical documents using OCR technology. The solution must demonstrate proficiency in modern Android development (Kotlin, Jetpack Compose), database management (Room), API integration (Gemini AI), and machine learning (ML Kit)."
+</p>
+
+<h3>C. Solution/Code</h3>
+<p>Below is the complete code for the entire project, consolidated into <code>MainActivity.kt</code>:</p>
+
+<pre><code>package com.example.ainote
+
+import android.app.Application
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.pdf.PdfRenderer
+import android.net.Uri
+import android.os.Bundle
+import android.os.ParcelFileDescriptor
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.room.*
+import com.google.ai.client.generativeai.GenerativeModel
+import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.text.TextRecognition
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+
+// --- Room Database ---
+
+@Entity(tableName = "notes")
+data class Note(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val title: String = "",
+    val content: String = "",
+    val summary: String = "",
+    val mcqs: String = "",
+    val createdAt: Long = System.currentTimeMillis()
+)
+
+@Dao
+interface NoteDao {
+    @Query("SELECT * FROM notes ORDER BY createdAt DESC")
+    fun getAllNotes(): Flow&lt;List&lt;Note&gt;&gt;
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertNote(note: Note): Long
+
+    @Delete
+    suspend fun deleteNote(note: Note)
+}
+
+@Database(entities = [Note::class], version = 1, exportSchema = false)
+abstract class NoteDatabase : RoomDatabase() {
+    abstract fun noteDao(): NoteDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: NoteDatabase? = null
+        fun getDatabase(context: Context): NoteDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    NoteDatabase::class.java,
+                    "ainote_database"
+                ).fallbackToDestructiveMigration().build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
+
+// --- ViewModel ---
+
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+    private val noteDao = NoteDatabase.getDatabase(application).noteDao()
+    val allNotes = noteDao.getAllNotes()
+
+    private val generativeModel = GenerativeModel(
+        modelName = "gemini-1.5-flash",
+        apiKey = "AIzaSyD84LGIuMf1zh2MIjp4sWbl_aOdqrv-TGY"
+    )
+
+    private val textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+
+    private val _extractedText = MutableStateFlow("")
+    val extractedText: StateFlow&lt;String&gt; = _extractedText
+
+    private val _summary = MutableStateFlow("")
+    val summary: StateFlow&lt;String&gt; = _summary
+
+    private val _mcqs = MutableStateFlow("")
+    val mcqs: StateFlow&lt;String&gt; = _mcqs
+
+    private val _isProcessing = MutableStateFlow(false)
+    val isProcessing: StateFlow&lt;Boolean&gt; = _isProcessing
+
+    fun saveNote(title: String, content: String, summary: String = "", mcqs: String = "") {
+        viewModelScope.launch {
+            noteDao.insertNote(Note(title = title, content = content, summary = summary, mcqs = mcqs))
+        }
+    }
+
+    fun deleteNote(note: Note) {
+        viewModelScope.launch { noteDao.deleteNote(note) }
+    }
+
+    fun processImage(context: Context, uri: Uri) {
+        viewModelScope.launch {
+            _isProcessing.value = true
+            try {
+                val image = InputImage.fromFilePath(context, uri)
+                val result = textRecognizer.process(image).await()
+                _extractedText.value = result.text
+            } catch (e: Exception) {
+                _extractedText.value = "Error extracting text: ${e.message}"
+            } finally {
+                _isProcessing.value = false
+            }
+        }
+    }
+
+    fun processPdf(context: Context, uri: Uri) {
+        viewModelScope.launch {
+            _isProcessing.value = true
+            try {
+                val fileDescriptor: ParcelFileDescriptor? = context.contentResolver.openFileDescriptor(uri, "r")
+                if (fileDescriptor != null) {
+                    val renderer = PdfRenderer(fileDescriptor)
+                    val textBuilder = java.lang.StringBuilder()
+                    for (i in 0 until renderer.pageCount) {
+                        val page = renderer.openPage(i)
+                        val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
+                        page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
+                        page.close()
+                        
+                        val image = InputImage.fromBitmap(bitmap, 0)
+                        val result = textRecognizer.process(image).await()
+                        textBuilder.append(result.text).append("\n")
+                    }
+                    renderer.close()
+                    fileDescriptor.close()
+                    _extractedText.value = textBuilder.toString()
+                }
+            } catch (e: Exception) {
+                _extractedText.value = "Error reading PDF: ${e.message}"
+            } finally {
+                _isProcessing.value = false
+            }
+        }
+    }
+
+    fun generateSummary(text: String) {
+        viewModelScope.launch {
+            _isProcessing.value = true
+            try {
+                val response = generativeModel.generateContent("Summarize the following text:\n$text")
+                _summary.value = response.text ?: "Could not generate summary."
+            } catch (e: Exception) {
+                _summary.value = "Error: ${e.message}"
+            } finally {
+                _isProcessing.value = false
+            }
+        }
+    }
+
+    fun generateMCQs(text: String) {
+        viewModelScope.launch {
+            _isProcessing.value = true
+            try {
+                val response = generativeModel.generateContent("Generate 5 multiple-choice questions with answers from the following text:\n$text")
+                _mcqs.value = response.text ?: "Could not generate MCQs."
+            } catch (e: Exception) {
+                _mcqs.value = "Error: ${e.message}"
+            } finally {
+                _isProcessing.value = false
+            }
+        }
+    }
+    
+    fun clearExtraction() {
+        _extractedText.value = ""
+        _summary.value = ""
+        _mcqs.value = ""
+    }
+}
+
+// --- UI / Activity ---
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    MainApp()
+                }
+            }
+        }
+    }
+}
+
+enum class Screen {
+    NoteList, AddNote, DocumentScanner, NoteDetail
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MainApp() {
+    var currentScreen by remember { mutableStateOf(Screen.NoteList) }
+    var selectedNote by remember { mutableStateOf&lt;Note?&gt;(null) }
+    val viewModel: MainViewModel = viewModel()
+
+    when (currentScreen) {
+        Screen.NoteList -&gt; {
+            val notes by viewModel.allNotes.collectAsState(initial = emptyList())
+            Scaffold(
+                topBar = { TopAppBar(title = { Text("AiNote") }) },
+                floatingActionButton = {
+                    Column {
+                        FloatingActionButton(onClick = { currentScreen = Screen.DocumentScanner }, modifier = Modifier.padding(bottom = 8.dp)) {
+                            Icon(Icons.Default.DocumentScanner, "Scan Document")
+                        }
+                        FloatingActionButton(onClick = { currentScreen = Screen.AddNote }) {
+                            Icon(Icons.Default.Add, "Add Note")
+                        }
+                    }
+                }
+            ) { padding -&gt;
+                LazyColumn(modifier = Modifier.padding(padding)) {
+                    items(notes) { note -&gt;
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(8.dp)
+                                .clickable {
+                                    selectedNote = note
+                                    viewModel.clearExtraction()
+                                    currentScreen = Screen.NoteDetail
+                                }
+                        ) {
+                            Column(modifier = Modifier.padding(16.dp)) {
+                                Text(text = note.title, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleMedium)
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(text = note.content, maxLines = 2, style = MaterialTheme.typography.bodyMedium)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Screen.AddNote -&gt; {
+            var title by remember { mutableStateOf("") }
+            var content by remember { mutableStateOf("") }
+            Scaffold(
+                topBar = {
+                    TopAppBar(
+                        title = { Text("Add Note") },
+                        navigationIcon = {
+                            IconButton(onClick = { currentScreen = Screen.NoteList }) {
+                                Icon(Icons.Default.ArrowBack, "Back")
+                            }
+                        },
+                        actions = {
+                            IconButton(onClick = {
+                                viewModel.saveNote(title, content)
+                                currentScreen = Screen.NoteList
+                            }) {
+                                Icon(Icons.Default.Check, "Save")
+                            }
+                        }
+                    )
+                }
+            ) { padding -&gt;
+                Column(modifier = Modifier.padding(padding).padding(16.dp)) {
+                    OutlinedTextField(
+                        value = title,
+                        onValueChange = { title = it },
+                        label = { Text("Title") },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    OutlinedTextField(
+                        value = content,
+                        onValueChange = { content = it },
+                        label = { Text("Content") },
+                        modifier = Modifier.fillMaxWidth().weight(1f)
+                    )
+                }
+            }
+        }
+        Screen.DocumentScanner -&gt; {
+            val context = LocalContext.current
+            val extractedText by viewModel.extractedText.collectAsState()
+            val summary by viewModel.summary.collectAsState()
+            val mcqs by viewModel.mcqs.collectAsState()
+            val isProcessing by viewModel.isProcessing.collectAsState()
+
+            var title by remember { mutableStateOf("") }
+
+            val imageLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? -&gt;
+                uri?.let { viewModel.processImage(context, it) }
+            }
+            val pdfLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? -&gt;
+                uri?.let { viewModel.processPdf(context, it) }
+            }
+
+            Scaffold(
+                topBar = {
+                    TopAppBar(
+                        title = { Text("Scan Document") },
+                        navigationIcon = {
+                            IconButton(onClick = {
+                                viewModel.clearExtraction()
+                                currentScreen = Screen.NoteList
+                            }) {
+                                Icon(Icons.Default.ArrowBack, "Back")
+                            }
+                        },
+                        actions = {
+                            if (extractedText.isNotBlank()) {
+                                IconButton(onClick = {
+                                    viewModel.saveNote(
+                                        title = title.ifBlank { "Scanned Document" },
+                                        content = extractedText,
+                                        summary = summary,
+                                        mcqs = mcqs
+                                    )
+                                    viewModel.clearExtraction()
+                                    currentScreen = Screen.NoteList
+                                }) {
+                                    Icon(Icons.Default.Save, "Save Note")
+                                }
+                            }
+                        }
+                    )
+                }
+            ) { padding -&gt;
+                Column(modifier = Modifier.padding(padding).padding(16.dp)) {
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                        Button(onClick = { imageLauncher.launch("image/*") }) {
+                            Text("Upload Image")
+                        }
+                        Button(onClick = { pdfLauncher.launch("application/pdf") }) {
+                            Text("Upload PDF")
+                        }
+                    }
+                    if (isProcessing) {
+                        Spacer(modifier = Modifier.height(16.dp))
+                        CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+                    }
+                    if (extractedText.isNotBlank()) {
+                        Spacer(modifier = Modifier.height(16.dp))
+                        OutlinedTextField(
+                            value = title,
+                            onValueChange = { title = it },
+                            label = { Text("Note Title") },
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                            Button(onClick = { viewModel.generateSummary(extractedText) }) {
+                                Text("Generate Summary")
+                            }
+                            Button(onClick = { viewModel.generateMCQs(extractedText) }) {
+                                Text("Generate MCQs")
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    LazyColumn(modifier = Modifier.weight(1f)) {
+                        if (summary.isNotBlank()) {
+                            item {
+                                Text("Summary:", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                                Text(summary)
+                                Spacer(modifier = Modifier.height(16.dp))
+                            }
+                        }
+                        if (mcqs.isNotBlank()) {
+                            item {
+                                Text("MCQs:", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                                Text(mcqs)
+                                Spacer(modifier = Modifier.height(16.dp))
+                            }
+                        }
+                        if (extractedText.isNotBlank()) {
+                            item {
+                                Text("Extracted Text:", fontWeight = FontWeight.Bold)
+                                Text(extractedText)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Screen.NoteDetail -&gt; {
+            val note = selectedNote ?: return
+            val summary by viewModel.summary.collectAsState()
+            val mcqs by viewModel.mcqs.collectAsState()
+            val isProcessing by viewModel.isProcessing.collectAsState()
+
+            Scaffold(
+                topBar = {
+                    TopAppBar(
+                        title = { Text(note.title) },
+                        navigationIcon = {
+                            IconButton(onClick = { currentScreen = Screen.NoteList }) {
+                                Icon(Icons.Default.ArrowBack, "Back")
+                            }
+                        },
+                        actions = {
+                            IconButton(onClick = {
+                                viewModel.deleteNote(note)
+                                currentScreen = Screen.NoteList
+                            }) {
+                                Icon(Icons.Default.Delete, "Delete")
+                            }
+                        }
+                    )
+                }
+            ) { padding -&gt;
+                Column(modifier = Modifier.padding(padding).padding(16.dp)) {
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                        Button(onClick = { viewModel.generateSummary(note.content) }) {
+                            Text("AI Summary")
+                        }
+                        Button(onClick = { viewModel.generateMCQs(note.content) }) {
+                            Text("Generate MCQs")
+                        }
+                    }
+                    if (isProcessing) {
+                        Spacer(modifier = Modifier.height(16.dp))
+                        CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    LazyColumn(modifier = Modifier.fillMaxSize()) {
+                        if (summary.isNotBlank() || note.summary.isNotBlank()) {
+                            item {
+                                Text("Summary:", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                                Text(summary.ifBlank { note.summary })
+                                Spacer(modifier = Modifier.height(16.dp))
+                            }
+                        }
+                        if (mcqs.isNotBlank() || note.mcqs.isNotBlank()) {
+                            item {
+                                Text("MCQs:", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                                Text(mcqs.ifBlank { note.mcqs })
+                                Spacer(modifier = Modifier.height(16.dp))
+                            }
+                        }
+                        item {
+                            Text("Content:", fontWeight = FontWeight.Bold)
+                            Text(note.content)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+</body>
+</html>
